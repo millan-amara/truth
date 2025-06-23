@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <>
         <div id="top-nav" className={`text-sm pt-6 pb-6 px-2 flex justify-center font-semibold text-white md:text-white items-center z-20 relative ${
-            isHome ? "bg-black md:bg-transparent" : "md:bg-black bg-white"
+            isHome ? "md:bg-transparent" : "md:bg-black bg-white"
         }`} style={{ height: '30px' }}>
 
             <p className='hidden md:flex mr-6 flex items-center'><span className='mr-1'><FaPhone /></span> +254 700-487-751</p>
@@ -27,7 +27,7 @@ function Navbar() {
 
         <header
             className={`px-8 flex justify-between items-center sticky top-0 z-30 text-black transition-all duration-300 ${
-                isHome ? "bg-black text-white md:bg-transparent md:text-white" : "bg-white shadow-md"
+                isHome ? "text-white md:bg-transparent" : "bg-white shadow-md"
             }`}
         >
 
@@ -54,7 +54,7 @@ function Navbar() {
 
             {/* Mobile menu */}
             <div 
-                className={`fixed top-0 right-0 h-screen z-50 w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                className={`fixed top-0 right-0 h-screen z-50 w-3/4 max-w-xs bg-gray-800 shadow-lg transform transition-transform duration-300 ease-in-out ${
                     menuOpen ? "translate-x-0" : "translate-x-full"
                 } md:hidden`}
             >
@@ -65,20 +65,20 @@ function Navbar() {
                     <FaTimes />
                 </button>
 
-                <div className="flex flex-col mx-auto p-6 mt-10 text-lg">
+                <div className="flex flex-col mx-auto p-6 mt-10 text-base">
                     <Link to="/" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Home</Link>
-                    <Link to="/packages" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Packages</Link>
+                    {/* <Link to="/packages" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Packages</Link> */}
                     <Link to="/services" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Services</Link>
                     <Link to="/about" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">About</Link>
                     <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:underline py-2">Contact</Link>
                 </div>
 
                 {/* Contact Support section */}
-                <div className="absolute bottom-24 left-0 w-full text-center text-sm text-slate-600 px-4">
-                    <div className="mb-1 font-semibold text-black">Let's Talk</div>
-                    <div className="mb-1">
+                <div className="absolute bottom-24 left-0 w-full text-center text-sm text-white px-4">
+                    <div className="mb-1 font-semibold text-white">Let's Talk</div>
+                    <div className="mb-1 text-green-400">
                         <a href={`https://wa.me/+254700487751`} target="_blank" rel="noopener noreferrer" className="font-medium flex justify-center items-center">
-                        <span className='text-green-700 mr-1'>Chat on WhatsApp</span>
+                        <span className='mr-1'>Chat on WhatsApp</span>
                         <FaExternalLinkAlt />
                         </a>
                     </div>

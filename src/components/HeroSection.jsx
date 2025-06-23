@@ -19,8 +19,8 @@ const HeroSection = () => {
   return (
     <div className="relative h-screen overflow-hidden">
 
-      {/* ✅ Background media */}
-      {isDesktop ? (
+      {/* ✅ Background media
+      {isDesktop ? ( */}
         <video
           autoPlay
           muted
@@ -30,13 +30,13 @@ const HeroSection = () => {
           src="https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637740/truth/0040_teo9pc.mp4"
           poster="https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/boatey_nofqin.png" // fallback
         />
-      ) : (
-        <img
-          src="https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/boatey_nofqin.png"
-          alt="Background"
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        />
-      )}
+      {/* // ) : (
+      //   <img
+      //     src="https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/boatey_nofqin.png"
+      //     alt="Background"
+      //     className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      //   />
+      // )} */}
 
       {/* ✅ Optional dark overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10" />
