@@ -9,10 +9,10 @@ import Router from "../assets/logo.png";
 
 function Footer() {
   return (
-    <footer id="footer" className="bg-black text-white px-5 pt-14 pb-8 flex flex-col md:block items-center">
+    <footer id="footer" className="bg-black text-gray-300 px-5 pt-14 pb-8 flex flex-col md:block items-center">
     <div className="flex flex-col md:flex-row justify-around mb-5">
         <div className="w-full md:w-1/4 md:flex md:flex-col md:justify-center md:items-center">
-            <p className="brand text-3xl mb-3 text-white-600 font-semibold text-center">AI_AM_<span>TRUTH</span></p>
+            <p className="text-3xl mb-3 font-semibold text-center">ai_am_<span>truth</span></p>
             <p className="mb-5 text-base">Wanna create something amazing?</p>
             <div>
                 <p className='flex items-center mb-1'><Mail size={18} className='mr-1' />films@aiamtruth.com</p>
@@ -27,7 +27,7 @@ function Footer() {
         {/* <div className="border-l-2 border-white hidden md:block ">
             <p className=""></p>
         </div> */}
-        <div className="mt-10 flex flex-col items-center md:mt-0">
+        <div className="mt-10 flex flex-col items-center md:mt-0 text-white">
             <img src={Router} alt="" className='h-56' />
             <div className='flex text-xl justify-center'>
                 <p className='mr-3 bg-zinc-700 rounded-full flex py-2 px-2'><Link className='text-blue-400'><FaFacebookF /></Link></p>
