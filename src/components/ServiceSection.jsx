@@ -31,6 +31,6 @@ function ServiceSection() {
 
     </>
   );
-}
+}\
 
 export default ServiceSection;
