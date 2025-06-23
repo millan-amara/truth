@@ -3,30 +3,43 @@ import { useInView } from "react-intersection-observer";
 
 const videos = [
   {
-    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/f_webm,vc_vp9/v1750621697/truth/0040_elwhpb",
-    orientation: "portrait",
-  },
-    {
-    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/f_webm,vc_vp9/v1750621697/truth/0040_elwhpb",
+    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637740/truth/0040_teo9pc.mp4",
     orientation: "landscape",
+    poster: "https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/boatey_nofqin.png"
   },
-    {
-    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/f_webm,vc_vp9/v1750621697/truth/0040_elwhpb",
+  {
+    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637784/truth/58_hccfzl.mp4",
     orientation: "portrait",
+    poster: "https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639832/truth/gallery-image/yellow_zcpuof.png"
   },
     {
-    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/f_webm,vc_vp9/v1750621697/truth/0040_elwhpb",
-    orientation: "portrait",
-  },
-    {
-    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/f_webm,vc_vp9/v1750621697/truth/0040_elwhpb",
-    poster: "https://res.cloudinary.com/dcj3qavxy/video/upload/c_limit,h_400,w_600/v1750621697/truth/0040_elwhpb.jpg",
+    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637791/truth/2025-04-16-Nature_zhtjow.mp4",
     orientation: "landscape",
+    poster: "https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639832/truth/gallery-image/nature_p5hwcb.png"
   },
     {
-    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/f_webm,vc_vp9/v1750621697/truth/0040_elwhpb",
+    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637742/truth/00033_sasvoq.mp4",
+    orientation: "portrait",
+    poster: "https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/coca_yrzaze.png"
+  },
+  {
+    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637774/truth/212_i27pao.mp4",
+    orientation: "landscape",
+    poster: "https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639831/truth/gallery-image/leaf_b1tl7g.png"
+  },
+      {
+    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/v1750636442/truth/255_ykvzsu.mp4",
+    orientation: "portrait",
+    poster: "https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/bikey_aegcdt.png"
+  },
+  {
+    src: "https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637749/truth/45105_bk8qoa.mp4",
+    poster: "https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639831/truth/gallery-image/red_dw8yw4.png",
     orientation: "portrait",
   },
+
+
+
 
 ];
 
@@ -43,6 +56,7 @@ export default function VideoGallery() {
             key={index}
             src={video.src}
             orientation={video.orientation}
+            poster={video.poster}
             index={index}
           />
         ))}
@@ -51,12 +65,12 @@ export default function VideoGallery() {
   );
 }
 
-function VideoCard({ src, orientation, index }) {
+function VideoCard({ src, orientation, index, poster }) {
   const videoRef = useRef(null);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const [isMobile, setIsMobile] = useState(false);
 
-  const isFirst = index === 0;
+  const isFirst = index === 0 || index === 5;
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -94,7 +108,7 @@ function VideoCard({ src, orientation, index }) {
           preload={isFirst ? "auto" : "none"}
           autoPlay={isFirst}
           className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
-          poster={videoRef.poster}
+          poster={poster}
           onClick={() => {
             if (isMobile && !isFirst) {
               handlePlay();

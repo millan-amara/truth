@@ -17,7 +17,7 @@ function Navbar() {
             isHome ? "bg-black md:bg-transparent" : "md:bg-black bg-white"
         }`} style={{ height: '30px' }}>
 
-            <p className='mr-6 flex items-center'><span className='mr-1'><FaPhone /></span> +254 700-487-751</p>
+            <p className='hidden md:flex mr-6 flex items-center'><span className='mr-1'><FaPhone /></span> +254 700-487-751</p>
             <p className='hidden md:flex mr-6 items-center'><span className='mr-1'><MdEmail /></span>films@aiamtruth.com</p>
             <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-2 px-2'><Link className='text-lg text-white'><FaFacebookF /></Link></p>
             <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-2 px-2'><Link className='text-lg'><FaInstagram /></Link></p>
@@ -46,7 +46,7 @@ function Navbar() {
             {/* Desktop menu */}
             <nav className="hidden sm:flex font-medium space-x-6 z-50">
                 <Link to="/" className="text-white hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Home</Link>
-                <Link to="/packages" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Packages</Link>
+                {/* <Link to="/packages" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Packages</Link> */}
                 <Link to="/services" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Services</Link>
                 <Link to="/about" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">About</Link>
                 <Link to="/contact" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Contact</Link>

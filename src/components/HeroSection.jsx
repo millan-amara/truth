@@ -27,12 +27,12 @@ const HeroSection = () => {
           loop
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src="https://res.cloudinary.com/dcj3qavxy/video/upload/f_webm,vc_vp9/v1750621697/truth/0040_elwhpb"
-          poster="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/v1712345678/fallback-image.jpg" // fallback
+          src="https://res.cloudinary.com/dcj3qavxy/video/upload/v1750637740/truth/0040_teo9pc.mp4"
+          poster="https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/boatey_nofqin.png" // fallback
         />
       ) : (
         <img
-          src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/v1712345678/fallback-image.jpg"
+          src="https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639830/truth/gallery-image/boatey_nofqin.png"
           alt="Background"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         />
@@ -59,7 +59,7 @@ const HeroSection = () => {
               Short-form content for TikTok, Reels & YouTube Shorts
             </p>
             <button className="px-6 py-3 bg-fuchsia-700 text-white rounded-md font-semibold hover:bg-fuchsia-800 transition cursor-pointer">
-              Let’s Work Together
+              Wanna Collab? 😎
             </button>
           </div>
         </section>
