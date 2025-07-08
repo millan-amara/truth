@@ -113,7 +113,7 @@ function VideoCard({ src, orientation, index, poster }) {
           loop={isFirst}
           playsInline
           preload={isFirst ? "auto" : "none"}
-          autoPlay={isFirst}
+          autoPlay='true'
           className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
           poster={poster}
           onClick={() => {
