@@ -83,20 +83,20 @@ function VideoCard({ src, orientation, index, poster }) {
     setIsMobile(window.innerWidth < 768);
   }, []);
 
-  const handlePlay = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.play();
-    }
-  };
+  // const handlePlay = () => {
+  //   const video = videoRef.current;
+  //   if (video) {
+  //     video.play();
+  //   }
+  // };
 
-  const handlePause = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.pause();
-      video.currentTime = 0;
-    }
-  };
+  // const handlePause = () => {
+  //   const video = videoRef.current;
+  //   if (video) {
+  //     video.pause();
+  //     video.currentTime = 0;
+  //   }
+  // };
 
   return (
     <div
@@ -110,23 +110,23 @@ function VideoCard({ src, orientation, index, poster }) {
           ref={videoRef}
           src={src}
           muted
-          loop={isFirst}
+          loop='true'
           playsInline
           preload={isFirst ? "auto" : "none"}
           autoPlay='true'
           className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
           poster={poster}
-          onClick={() => {
-            if (isMobile && !isFirst) {
-              handlePlay();
-            }
-          }}
-          onMouseEnter={() => {
-            if (!isMobile && !isFirst) handlePlay();
-          }}
-          onMouseLeave={() => {
-            if (!isMobile && !isFirst) handlePause();
-          }}
+          // onClick={() => {
+          //   if (isMobile && !isFirst) {
+          //     handlePlay();
+          //   }
+          // }}
+          // onMouseEnter={() => {
+          //   if (!isMobile && !isFirst) handlePlay();
+          // }}
+          // onMouseLeave={() => {
+          //   if (!isMobile && !isFirst) handlePause();
+          // }}
         />
       )}
     </div>
