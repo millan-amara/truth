@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import VideoSample from '../assets/trl.mp4';
+import ReactPlayer from "react-player";
 
 // Landing page for a pre-sale video editing tutorial
 // - Tailwind CSS required in the project
@@ -105,15 +106,18 @@ export default function Tutorial() {
     }
   }
 
-  function sampleEditVideo() {
+  function SampleEditVideo() {
     return (
-      <video
-        src={VideoSample}
-        autoPlay
-        loop
-        playsInline
-        className="object-cover rounded shadow"
-      />
+      <div className="overflow-hidden rounded shadow">
+        <ReactPlayer
+          url="https://res.cloudinary.com/dcj3qavxy/video/upload/f_auto,w_1280,q_auto,br_500k,vc_auto,vs_1280x720/v1762008778/truth/trl_v3tffn.mp4"
+          controls
+          loop
+          playing={false}
+          width="100%"
+          height="auto"
+        />
+      </div>
     );
   }
 
@@ -157,14 +161,16 @@ export default function Tutorial() {
               </div>
 
               <div className="mt-4 lg:mt-0">
-                <video
-                  src="https://res.cloudinary.com/dcj3qavxy/video/upload/v1762008778/truth/trl_v3tffn.mp4"
-                  controls
-                  loop
-                  poster="https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639832/truth/gallery-image/nature_p5hwcb.png"
-                  playsInline
-                  className="object-cover rounded shadow"
-                />
+<SampleEditVideo />
+<ReactPlayer
+  url="https://res.cloudinary.com/dcj3qavxy/video/upload/f_auto,q_auto,w_1280/fl_hls/v1762008778/truth/trl_v3tffn.m3u8
+"
+  controls
+  loop
+  playing={false}
+  width="100%"
+  height="100%"
+/>
                
               </div>
             </div>
