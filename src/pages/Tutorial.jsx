@@ -117,8 +117,8 @@ export default function Tutorial() {
     );
   }
 
-  return (
 
+  return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Navbar />
       <header className="max-w-5xl mx-auto p-6 flex items-center justify-between mt-12">
@@ -157,8 +157,14 @@ export default function Tutorial() {
               </div>
 
               <div className="mt-4 lg:mt-0">
-                
-                  {sampleEditVideo()}
+                <video
+                  src="https://res.cloudinary.com/dcj3qavxy/video/upload/v1762008778/truth/trl_v3tffn.mp4"
+                  controls
+                  loop
+                  poster="https://res.cloudinary.com/dcj3qavxy/image/upload/v1750639832/truth/gallery-image/nature_p5hwcb.png"
+                  playsInline
+                  className="object-cover rounded shadow"
+                />
                
               </div>
             </div>
