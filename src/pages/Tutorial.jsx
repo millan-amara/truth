@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 
 
-const launchDate = new Date("2025-11-08T00:00:00"); // fixed launch date
+const launchDate = new Date("2025-11-09T00:00:00"); // fixed launch date
 
 
 export default function Tutorial() {
