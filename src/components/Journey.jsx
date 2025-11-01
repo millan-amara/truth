@@ -28,6 +28,11 @@ const timeline = [
     icon: <Handshake className="w-5 h-5 text-white" />,
     text: "Started working with brands and creators to deliver high-performing video edits.",
   },
+  {
+    date: "2026",
+    icon: <Handshake className="w-5 h-5 text-white" />,
+    text: "Plan - Travel the world, document it all!",
+  },
 ];
 
 

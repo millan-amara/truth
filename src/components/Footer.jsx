@@ -38,7 +38,7 @@ function Footer() {
         </div>
     </div>
     <div className="flex justify-center text-sm">
-        <p>&copy; {new Date().getFullYear()} ai_am_truth. All rights reserved</p>
+        <p>&copy; {new Date().getFullYear()} ai_am_truth. All rights reserved • Built for creators</p>
     </div>
 
   </footer>

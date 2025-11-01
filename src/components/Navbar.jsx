@@ -13,16 +13,16 @@ function Navbar() {
 
   return (
     <>
-        <div id="top-nav" className={`text-sm pt-6 pb-6 px-2 flex justify-center font-semibold text-white md:text-white items-center z-20 relative ${
+        <div id="top-nav" className={`text-xs pt-4 pb-4 px-2 flex justify-center font-semibold text-white md:text-white items-center z-20 relative ${
             isHome ? "md:bg-transparent" : "md:bg-black bg-white"
         }`} style={{ height: '30px' }}>
 
             <p className='hidden md:flex mr-6 flex items-center'><span className='mr-1'><FaPhone /></span> +254 700-487-751</p>
             <p className='hidden md:flex mr-6 items-center'><span className='mr-1'><MdEmail /></span>films@aiamtruth.com</p>
-            <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-2 px-2'><Link className='text-lg text-white'><FaFacebookF /></Link></p>
-            <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-2 px-2'><Link className='text-lg'><FaInstagram /></Link></p>
-            <p className='hidden md:flex mr-3 bg-green-500 rounded-full py-2 px-2'><a href={`https://wa.me/+254700487751`} target="_blank" rel="noopener noreferrer" className='text-lg'><FaWhatsapp /></a></p>
-            <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-2 px-2'><Link className='text-lg'><FaTiktok /></Link></p>
+            <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-1 px-1'><Link className='text-xs text-white'><FaFacebookF /></Link></p>
+            <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-1 px-1'><Link className='text-xs'><FaInstagram /></Link></p>
+            <p className='hidden md:flex mr-3 bg-green-500 rounded-full py-1 px-1'><a href={`https://wa.me/+254700487751`} target="_blank" rel="noopener noreferrer" className='text-xs'><FaWhatsapp /></a></p>
+            <p className='hidden md:flex mr-3 bg-zinc-700 rounded-full py-1 px-1'><Link className='text-xs'><FaTiktok /></Link></p>
         </div>
 
         <header
@@ -32,7 +32,7 @@ function Navbar() {
         >
 
             <Link to='/' className='flex flex-col items-center'>
-                <img src={Logo} className='w-16 md:w-20' />
+                <img src={Logo} className='w-12 md:w-12' />
             </Link>
 
             {/* Hamburger toggle */}
@@ -45,7 +45,7 @@ function Navbar() {
 
             {/* Desktop menu */}
             <nav className="hidden sm:flex font-medium space-x-6 z-50">
-                <Link to="/" className="text-white hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Home</Link>
+                <Link to="/learn" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Learn</Link>
                 {/* <Link to="/packages" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Packages</Link> */}
                 <Link to="/services" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">Services</Link>
                 <Link to="/about" className="hover:underline hover:underline-offset-2 hover:text-fuchsia-500">About</Link>
@@ -66,7 +66,7 @@ function Navbar() {
                 </button>
 
                 <div className="flex flex-col mx-auto p-6 mt-10 text-base">
-                    <Link to="/" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Home</Link>
+                    <Link to="/learn" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Learn</Link>
                     {/* <Link to="/packages" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Packages</Link> */}
                     <Link to="/services" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Services</Link>
                     <Link to="/about" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">About</Link>
