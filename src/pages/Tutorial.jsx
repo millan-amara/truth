@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import VideoSample from '../assets/trl.mp4';
-import ReactPlayer from "react-player";
 
-// Landing page for a pre-sale video editing tutorial
-// - Tailwind CSS required in the project
-// - Framer Motion may be used if you want animations (not necessary)
-// Usage: import and render <LandingPage /> in your app
+
+const launchDate = new Date("2025-11-08T00:00:00"); // fixed launch date
+
 
 export default function Tutorial() {
   // ----- CONFIG -----
@@ -14,26 +11,15 @@ export default function Tutorial() {
   const tiktokHandle = "@ai_am_truth"; // replace
   const paymentLink = "https://payments.example.com/checkout"; // replace with your IntaSend / M-Pesa link
   const earlyBirdPrice = 1500; // KES
-  const regularPrice = 2000; // KES
+  const regularPrice = 2500; // KES
   const totalSeats = 100;
   const earlyBirdLimit = 50; // number of early bird spots
-
-  // Launch date: 7 days from now
-  const launchDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 
   // ----- UI state -----
   const [now, setNow] = useState(new Date());
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [signups, setSignups] = useState(() => {
-    // Persist a fake signups counter in localStorage so the demo is interactive
-    try {
-      const raw = localStorage.getItem("preSaleSignups");
-      return raw ? parseInt(raw, 10) : 0;
-    } catch (e) {
-      return 0;
-    }
-  });
+  const [signups, setSignups] = useState(2);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -60,51 +46,6 @@ export default function Tutorial() {
   const seatsLeft = Math.max(0, totalSeats - signups);
   const currentPrice = signups < earlyBirdLimit ? earlyBirdPrice : regularPrice;
 
-  function validateEmail(e) {
-    return /\S+@\S+\.\S+/.test(e);
-  }
-
-  async function handleSignUp(e) {
-    e.preventDefault();
-    setError("");
-
-    if (!name.trim()) {
-      setError("Please enter your name.");
-      return;
-    }
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email.");
-      return;
-    }
-    if (seatsLeft <= 0) {
-      setError("All seats are full for this batch. Please join our waitlist.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      // Simulate a quick backend call for analytics / seat reservation
-      await new Promise((r) => setTimeout(r, 700));
-
-      // Increment demo signup counter (persisted in localStorage). In a real setup
-      // this should call your backend which charges the user and records the signup.
-      setSignups((s) => s + 1);
-
-      // Redirect to payment provider with params (replace with your real payment link)
-      const redirectUrl = new URL(paymentLink);
-      redirectUrl.searchParams.set("name", name);
-      redirectUrl.searchParams.set("email", email);
-      redirectUrl.searchParams.set("amount", String(currentPrice));
-      redirectUrl.searchParams.set("product", "Video Editing Tutorial - PreSale");
-
-      window.location.href = redirectUrl.toString();
-    } catch (err) {
-      console.error(err);
-      setError("Something went wrong. Please try again.");
-      setIsSubmitting(false);
-    }
-  }
 
 
   return (
@@ -120,7 +61,7 @@ export default function Tutorial() {
         </div>
         <div className="text-right">
           <div className="text-sm">Early bird</div>
-          <div className="text-lg font-semibold">KES {earlyBirdPrice}</div>
+          <div className="text-lg font-semibold">KES {earlyBirdPrice} <span className="line-through text-gray-400 text-sm">2500</span></div>
         </div>
       </header>
 
@@ -192,7 +133,7 @@ export default function Tutorial() {
             <div className="mt-6 p-4 bg-gray-50 rounded">
               <h4 className="font-semibold">Course timeline</h4>
               <p className="text-sm text-gray-700 mt-2">Pre-sale open now. We create the lessons this week and release everything on the launch date.</p>
-              <div className="mt-3 text-sm">Launch date: <strong>{launchDate.toDateString()}</strong></div>
+              <div className="mt-3 text-sm">Launch date: <strong>Mon Nov 10 2025</strong></div>
             </div>
           </div>
 
@@ -207,7 +148,7 @@ export default function Tutorial() {
 
               <details className="p-3 border rounded">
                 <summary className="font-medium cursor-pointer">Which software will you use?</summary>
-                <p className="mt-2 text-sm text-gray-700">We’ll show edits in Premiere Pro and also explain concepts that work across DaVinci Resolve and CapCut.</p>
+                <p className="mt-2 text-sm text-gray-700">We’ll show edits in CapCut. The same concepts work across other editing software like Premiere Pro and DaVinci Resolve.</p>
               </details>
 
               <details className="p-3 border rounded">
@@ -243,29 +184,20 @@ export default function Tutorial() {
 
               {/* Countdown */}
               <div className="mt-5 p-4 bg-gray-50 rounded">
-                <div className="text-xs text-gray-600">Launch countdown</div>
+                <div className="text-xs text-gray-600">Early bird countdown</div>
                 <div className="mt-2 text-xl font-mono">{String(days).padStart(2, "0")}d {String(hours).padStart(2, "0")}h {String(minutes).padStart(2, "0")}m {String(seconds).padStart(2, "0")}s</div>
               </div>
 
               {/* Signup form */}
-              <form onSubmit={handleSignUp} className="mt-5 space-y-3">
-                <div>
-                  <label className="sr-only">Name</label>
-                  <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your full name" className="w-full border rounded px-3 py-2" />
-                </div>
-                <div>
-                  <label className="sr-only">Email</label>
-                  <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email address" className="w-full border rounded px-3 py-2" />
-                </div>
+              <div className="mt-5 space-y-3 w-full">
 
-                {error && <div className="text-sm text-red-600">{error}</div>}
 
-                <button disabled={isSubmitting || seatsLeft <= 0} type="submit" className="w-full py-3 rounded bg-black text-white font-semibold disabled:opacity-60">
-                  {isSubmitting ? "Reserving your spot..." : `Reserve spot — KES ${currentPrice}`}
-                </button>
+                <a href="https://paystack.shop/pay/9g6r51z2d5" target="_blank" rel="noopener noreferrer" className="block w-full py-3 text-center rounded bg-black text-white font-semibold">
+                  Reserve spot — KES {currentPrice}
+                </a>
 
                 <div className="text-xs text-gray-600">Secure checkout. Full refund if we don’t launch.</div>
-              </form>
+              </div>
 
               <div className="mt-4 text-sm text-gray-600">
                 <div>Bonus for early birds: first 10 signups get free access to next 2 mini-tutorials.</div>

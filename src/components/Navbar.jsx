@@ -66,8 +66,8 @@ function Navbar() {
                 </button>
 
                 <div className="flex flex-col mx-auto p-6 mt-10 text-base">
+                    <Link to="/" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Home</Link>
                     <Link to="/learn" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Learn</Link>
-                    {/* <Link to="/packages" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Packages</Link> */}
                     <Link to="/services" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">Services</Link>
                     <Link to="/about" onClick={() => setMenuOpen(false)} className="hover:underline py-2 mb-2">About</Link>
                     <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:underline py-2">Contact</Link>
