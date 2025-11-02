@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 
 
-const launchDate = new Date("2025-11-09T00:00:00"); // fixed launch date
+const launchDate = new Date("2025-11-10T00:00:00"); // fixed launch date
 
 
 export default function Tutorial() {
@@ -133,7 +133,7 @@ export default function Tutorial() {
             <div className="mt-6 p-4 bg-gray-50 rounded">
               <h4 className="font-semibold">Course timeline</h4>
               <p className="text-sm text-gray-700 mt-2">Pre-sale open now. We create the lessons this week and release everything on the launch date.</p>
-              <div className="mt-3 text-sm">Launch date: <strong>Mon Nov 10 2025</strong></div>
+              <div className="mt-3 text-sm">Launch date: <strong>Mon Nov 12 2025</strong></div>
             </div>
           </div>
 
