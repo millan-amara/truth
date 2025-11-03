@@ -82,7 +82,7 @@ export default function Tutorial() {
                 <div className="mt-4 flex flex-wrap gap-3 items-center">
                   <div className="text-sm px-3 py-2 rounded bg-amber-100 text-amber-800 font-medium">Limited: 100 seats</div>
                   <div className="text-sm px-3 py-2 rounded bg-green-100 text-green-800 font-medium">Early bird: KES {earlyBirdPrice}</div>
-                  <div className="text-sm px-3 py-2 rounded bg-blue-100 text-blue-800 font-medium">Launch in {days}d {hours}h</div>
+                  <div className="text-sm px-3 py-2 rounded bg-blue-100 text-blue-800 font-medium">Ends in {days}d {hours}h</div>
                 </div>
               </div>
 
