@@ -19,7 +19,7 @@ export default function Tutorial() {
   const [now, setNow] = useState(new Date());
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [signups, setSignups] = useState(2);
+  const [signups, setSignups] = useState(3);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
